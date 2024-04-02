@@ -5,40 +5,64 @@
 
 \subsection{Projektumfeld} 
 \label{sec:Projektumfeld}
-\begin{itemize}
-	\item Kurze Vorstellung des Ausbildungsbetriebs (Geschäftsfeld, Mitarbeiterzahl \usw)
-	\item Wer ist Auftraggeber/Kunde des Projekts?
-\end{itemize}
+%\begin{itemize}
+%	\item Kurze Vorstellung des Ausbildungsbetriebs (Geschäftsfeld, Mitarbeiterzahl \usw)
+%	\item Wer ist Auftraggeber/Kunde des Projekts?
+%\end{itemize}
+Seit 2005 gibt es CSTx Software Engineering GmbH und im Jahr 2008 wurde CSTx zum Umsetzungspartner für Volkswagen AG.
+Durch den Großkunden konnte sich die CSTx in der Automobilbranche einen festen Platz sichern.
+Im Jahr 2018 gab es eine Umstrukturierung der Holding und die Gründung der drei Tochterunternehmen kam zustande.
+Insgesamt ist CSTx ein Mittelständiger Betrieb mit einer Mannschaftsgröße von knapp 100 Mitarbeitern.
+Die Ausbildung und die Projektarbeit findet in der Tochterfirma CSTx Enterprise Solutions GmbH statt.
+
+%\paragraph{Projektbezug}
+%Realisiert wird das Projekt als eigenständige Komplettlösung.
+%Auftraggeber und Steakholder ist Mark Barrenscheen, ein COO der CSTx Software Solutions GmbH.
 
 
 \subsection{Projektziel} 
 \label{sec:Projektziel}
-\begin{itemize}
-	\item Worum geht es eigentlich?
-	\item Was soll erreicht werden?
-\end{itemize}
+%\begin{itemize}
+%	\item Worum geht es eigentlich?
+%	\item Was soll erreicht werden?
+%\end{itemize}
+Es soll eine innovative Lösung für die Gästebegrüßung und den Informationsfluss entwickelt werden. 
+Dies umfasst die Darstellung einer auf den Kunden angepasste Info-Karte, die Integration von Live-Video-Streams, einem laufenden Info-Text und einer Uhrzeitangabe. 
+Durch diese Elemente sollen Gäste effektiv und ansprechend begrüßt werden und gleichzeitig wichtige Informationen erhalten. 
+Das Hauptziel besteht darin, ein visuell ansprechendes und informatives Tool zu schaffen, das die Aufmerksamkeit der Besucher auf sich zieht und einen positiven ersten Eindruck vermittelt.
 
 
 \subsection{Projektbegründung} 
 \label{sec:Projektbegruendung}
-\begin{itemize}
-	\item Warum ist das Projekt sinnvoll (\zB Kosten- oder Zeitersparnis, weniger Fehler)?
-	\item Was ist die Motivation hinter dem Projekt?
-\end{itemize}
+%\begin{itemize}
+%	\item Warum ist das Projekt sinnvoll (\zB Kosten- oder Zeitersparnis, weniger Fehler)?
+%	\item Was ist die Motivation hinter dem Projekt?
+%\end{itemize}
+Es besteht eine Notwendigkeit einer zeitgemäßen und effizienten Gästebegrüßung sowie Informationsbereitstellung.
+Die Implementierung einer digitalen Lösung bietet zahlreiche Vorteile, darunter die Reduzierung von benötigten Räumlichkeiten Für Informationsmaterialien und den dazugehörigen Aufwand.
+Zusätzlich ermöglicht sie eine schnellere Aktualisierung von Informationen, was zu einer zeitlichen Ersparnis führt und einen nahtlosen übergang von updates sicherstellt.
+Die Motivation hinter dem Projekt ist die Schaffung eines modernen und benutzerfreundlichen Systems, das Gäste anspricht und gleichzeitig die Arbeitsabläufe optimiert.
+Durch die Digitalisierung der Begrüßungs- und Informationsprozesse soll ein innovatives und professionelles Ambiente geschaffen werden, das die Attraktivität der Einrichtung steigert und die Zufriedenheit der Besucher erhöht.
 
 
 \subsection{Projektschnittstellen} 
 \label{sec:Projektschnittstellen}
-\begin{itemize}
-	\item Mit welchen anderen Systemen interagiert die Anwendung (technische Schnittstellen)?
-	\item Wer genehmigt das Projekt \bzw stellt Mittel zur Verfügung? 
-	\item Wer sind die Benutzer der Anwendung?
-	\item Wem muss das Ergebnis präsentiert werden?
-\end{itemize}
-
+%\begin{itemize}
+%	\item Mit welchen anderen Systemen interagiert die Anwendung (technische Schnittstellen)?
+%	\item Wer genehmigt das Projekt \bzw stellt Mittel zur Verfügung?
+%	\item Wer sind die Benutzer der Anwendung?
+%	\item Wem muss das Ergebnis präsentiert werden?
+%\end{itemize}
+Die Anwendung interagiert mit Microsoft Azure AD für die Authentifizierung und den Zugriff auf Kalendereinträge.
+Die Genehmigung des Projekts sowie die Bereitstellung von Ressourcen erfolgt durch die relevanten Stakeholder und Entscheidungsträger, wie beispielsweise die IT-Abteilung, die Geschäftsführung oder das Projektmanagementteam.
+Jeder Mitarbeiter, der über einen Azure-Account der Organisation verfügt, kann sich in die Anwendung einloggen und sie nutzen.
+Die Anwendung zeigt die kommenden Kalendereinträge des Tages an und kann somit auch als Dashboard für den kommenden Arbeitstag einzelner Mitarbeiter verwendet werden.
+Das Ergebnis des Projekts muss Mark Barrenscheen präsentiert werden, der das Projekt initiiert hat und sowohl Stakeholder als auch Hauptanwender ist, der die Anwendung vorrangig nutzt.
 
 \subsection{Projektabgrenzung} 
 \label{sec:Projektabgrenzung}
-\begin{itemize}
-	\item Was ist explizit nicht Teil des Projekts (\insb bei Teilprojekten)?
-\end{itemize}
+%\begin{itemize}
+%	\item Was ist explizit nicht Teil des Projekts (\insb bei Teilprojekten)?
+%\end{itemize}
+Die Einrichtung der Authentifizierung seitens Azure AD sowie das Deployment sind nicht Teil des Projekts.
+Ebenfalls wurde explizit gewünscht, keine Datenbank zu verwenden, da das Auslesen der Kalendereinträge ausreicht.
