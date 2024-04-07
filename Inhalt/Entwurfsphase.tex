@@ -1,91 +1,143 @@
 % !TEX root = ../Projektdokumentation.tex
-\section{Entwurfsphase} 
-\label{sec:Entwurfsphase}
+\section{Vorbereitungsphase}
+\label{sec:Vorbereitungsphase}
 
 \subsection{Zielplattform}
 \label{sec:Zielplattform}
+%\begin{itemize}
+%	\item Beschreibung der Kriterien zur Auswahl der Zielplattform (\ua Programmiersprache, Datenbank, Client/Server, Hardware).
+%\end{itemize}
+In Bezug auf die Programmiersprache und das Framework fiel die Wahl auf \ac{TS} in Verbindung mit dem React-Framework.
+\ac{TS} bietet die Möglichkeit, eine robuste und wartbare Codebasis zu entwickeln, während React eine interaktive Benutzeroberfläche ermöglicht.
+Diese Kombination erleichtert die Entwicklung einer benutzerfreundlichen Anwendung und bietet die Möglichkeit zur Wiederverwendung von Code.
 
-\begin{itemize}
-	\item Beschreibung der Kriterien zur Auswahl der Zielplattform (\ua Programmiersprache, Datenbank, Client/Server, Hardware).
-\end{itemize}
+
+Die Entscheidung für die Laufzeitumgebung fiel auf Electron, um eine plattformübergreifende Kompatibilität sicherzustellen und die Nutzung von Webtechnologien zu ermöglichen.
+Durch Electron kann die Anwendung als Desktop-App ausgeführt werden und ist somit auf verschiedenen Betriebssystemen wie Windows, macOS und Linux nutzbar.
 
 
 \subsection{Architekturdesign}
 \label{sec:Architekturdesign}
-\begin{itemize}
-	\item Beschreibung und Begründung der gewählten Anwendungsarchitektur (\zB \acs{MVC}).
-	\item \Ggfs Bewertung und Auswahl von verwendeten Frameworks sowie \ggfs eine kurze Einführung in die Funktionsweise des verwendeten Frameworks.
-\end{itemize}
+%\begin{itemize}
+%	\item Beschreibung und Begründung der gewählten Anwendungsarchitektur (\zB \acs{MVC}).
+%	\item \Ggfs Bewertung und Auswahl von verwendeten Frameworks sowie \ggfs eine kurze Einführung in die Funktionsweise des verwendeten Frameworks.
+%\end{itemize}
+Die gewählte Architektur basiert auf dem Konzept des \ac{CP}-Musters, das eine klare Trennung zwischen der Logik der Anwendung und der Darstellung der Benutzeroberfläche ermöglicht.
+Dieses Muster wird oft in Kombination mit dem React-Framework verwendet und ermöglicht eine effiziente Entwicklung und Wartung der Anwendung
 
-\paragraph{Beispiel}
-Anhand der Entscheidungsmatrix in Tabelle~\ref{tab:Entscheidungsmatrix} wurde für die Implementierung der Anwendung das \acs{PHP}-Framework Symfony\footnote{\Vgl \citet{Symfony}.} ausgewählt. 
 
-\tabelle{Entscheidungsmatrix}{tab:Entscheidungsmatrix}{Nutzwert.tex}
+Im Rahmen dieser Architektur werden die verschiedenen Komponenten der Anwendung in Container-Komponenten und Präsentationskomponenten aufgeteilt.
+Die Container-Komponenten sind für die Logik der Anwendung zuständig, während die Präsentationskomponenten die Darstellung der Benutzeroberfläche übernehmen.
+Dadurch wird eine klare Trennung von Daten und Darstellung erreicht, was die Wiederverwendbarkeit und Testbarkeit der Komponenten verbessert.
+
+
+Die Wahl des React-Frameworks unterstützt diese Architektur, da React die Entwicklung von wiederverwendbaren \ac{UI}-Komponenten erleichtert und eine effiziente Aktualisierung der Benutzeroberfläche ermöglicht.
+React verwendet eine virtuelle DOM, um Änderungen effizient zu verarbeiten und die Benutzeroberfläche schnell zu aktualisieren.
+
+%\paragraph{Beispiel}
+%Anhand der Entscheidungsmatrix in Tabelle~\ref{tab:Entscheidungsmatrix} wurde für die Implementierung der Anwendung das \acs{PHP}-Framework Symfony\footnote{\Vgl \citet{Symfony}.} ausgewählt.
+%
+%\tabelle{Entscheidungsmatrix}{tab:Entscheidungsmatrix}{Nutzwert.tex}
 
 
 \subsection{Entwurf der Benutzeroberfläche}
 \label{sec:Benutzeroberflaeche} 
-\begin{itemize}
-	\item Entscheidung für die gewählte Benutzeroberfläche (\zB GUI, Webinterface).
-	\item Beschreibung des visuellen Entwurfs der konkreten Oberfläche (\zB Mockups, Menüführung).
-	\item \Ggfs Erläuterung von angewendeten Richtlinien zur Usability und Verweis auf Corporate Design.
-\end{itemize}
+%\begin{itemize}
+%	\item Entscheidung für die gewählte Benutzeroberfläche (\zB GUI, Webinterface).
+%	\item Beschreibung des visuellen Entwurfs der konkreten Oberfläche (\zB Mockups, Menüführung).
+%	\item \Ggfs Erläuterung von angewendeten Richtlinien zur Usability und Verweis auf Corporate Design.
+%\end{itemize}
+Die Benutzeroberfläche besteht aus vier Hauptkomponenten, die auf einen Blick alle relevanten Informationen anzeigen: die Uhrzeit und das Datum, den Live-Video-Feed, die Laufschrift und die Terminauflistung.
+Die Anordnung der Komponenten erfolgt so, dass sie übersichtlich und leicht erkennbar sind.
 
-\paragraph{Beispiel}
-Beispielentwürfe finden sich im \Anhang{app:Entwuerfe}.
+Die Uhrzeit und das Datum werden prominent oben rechts oder oben links auf der Anzeige platziert, um sie leicht sichtbar zu machen.
+Dies ermöglicht den Besuchern, jederzeit die aktuelle Zeit und das Datum im Blick zu haben.
+
+Der Live-Video-Feed nimmt den Bereich oben links oder unten links der Benutzeroberfläche ein.
+Dadurch können sie wichtige Ereignisse oder Informationen in Echtzeit verfolgen.
+
+Die Laufschrift wird unteren am Rand der Anzeige positioniert und zeigt kontinuierlich wichtige Nachrichten oder Mitteilungen von oder über das Unternehmen an.
+Dies ermöglicht es den Besuchern, relevante Informationen schnell zu erfassen, selbst wenn sie sich nicht aktiv auf die Anzeige konzentrieren.
+
+Die Terminauflistung wird angezeigt, wenn Termine vorhanden sind, und zeigt eine Liste der kommenden Ereignisse oder Besprechungen über die gesamte rechte Seite an.
+Wenn keine Termine vorhanden sind, wird die Terminauflistung ausgeblendet, um Platz für die anderen Komponenten zu schaffen.
+
+Es gibt kein traditionelles Menü oder \ac{UI} in der Anwendung.
+Die Anwendung wird ausschließlich von Hotkeys gesteuert, die von den Benutzern verwendet werden können, um zwischen den verschiedenen Ansichten zu navigieren oder Aktionen auszuführen.
+Darüber hinaus reagiert die Anwendung auf Kalenderupdates, um Änderungen in den Terminen sofort zu reflektieren und die Anzeige entsprechend anzupassen.
+
+\paragraph{Wireframes}
+Entwürfe für die Oberfläche finden sich im \Anhang{app:Entwuerfe}.
 
 
-\subsection{Datenmodell}
-\label{sec:Datenmodell}
-
-\begin{itemize}
-	\item Entwurf/Beschreibung der Datenstrukturen (\zB \acs{ERM} und/oder Tabellenmodell, \acs{XML}-Schemas) mit kurzer Beschreibung der wichtigsten (!) verwendeten Entitäten.
-\end{itemize}
-
-\paragraph{Beispiel}
-In \Abbildung{ER} wird ein \ac{ERM} dargestellt, welches lediglich Entitäten, Relationen und die dazugehörigen Kardinalitäten enthält. 
-
-\begin{figure}[htb]
-\centering
-\includegraphicsKeepAspectRatio{ERDiagramm.pdf}{0.6}
-\caption{Vereinfachtes ER-Modell}
-\label{fig:ER}
-\end{figure} 
+%\subsection{Datenmodell}
+%\label{sec:Datenmodell}
+%
+%\begin{itemize}
+%	\item Entwurf/Beschreibung der Datenstrukturen (\zB \acs{ERM} und/oder Tabellenmodell, \acs{XML}-Schemas) mit kurzer Beschreibung der wichtigsten (!) verwendeten Entitäten.
+%\end{itemize}
+%
+%\paragraph{Beispiel}
+%In \Abbildung{ER} wird ein \ac{ERM} dargestellt, welches lediglich Entitäten, Relationen und die dazugehörigen Kardinalitäten enthält.
+%
+%\begin{figure}[htb]
+%\centering
+%\includegraphicsKeepAspectRatio{ERDiagramm.pdf}{0.6}
+%\caption{Vereinfachtes ER-Modell}
+%\label{fig:ER}
+%\end{figure}
 
 
 \subsection{Geschäftslogik}
 \label{sec:Geschaeftslogik}
+%\begin{itemize}
+%	\item Modellierung und Beschreibung der wichtigsten (!) Bereiche der Geschäftslogik (\zB mit Kom\-po\-nen\-ten-, Klassen-, Sequenz-, Datenflussdiagramm, Programmablaufplan, Struktogramm, \ac{EPK}).
+%	\item Wie wird die erstellte Anwendung in den Arbeitsfluss des Unternehmens integriert?
+%\end{itemize}
 
-\begin{itemize}
-	\item Modellierung und Beschreibung der wichtigsten (!) Bereiche der Geschäftslogik (\zB mit Kom\-po\-nen\-ten-, Klassen-, Sequenz-, Datenflussdiagramm, Programmablaufplan, Struktogramm, \ac{EPK}).
-	\item Wie wird die erstellte Anwendung in den Arbeitsfluss des Unternehmens integriert?
-\end{itemize}
+Dieses Projekts ist klar strukturiert und ist unterteilt zwischen einer Renderer- und Main-Komponente.
+Hier wird das Electron-Framework verwendet, um sowohl eine Chromium Instanz als auch die Kommunikation zwischen den beiden Komponente mittels des Observer-Patterns bereitzustellen.
+Der Renderer nutzt React, \ac{TS} und Tailwind \ac{CSS}, um eine interaktive und ansprechende Oberfläche zu gestalten und integriert zusätzlich einen Key-Handler für eine vereinfachte Benutzerinteraktion.
+Innerhalb des Renderers sind verschiedene visuelle Komponenten wie Uhrzeit und Datum, Live-Video, Laufschrift, eine auflistung von Terminen und Login-Funktion integriert.
 
-\paragraph{Beispiel}
-Ein Klassendiagramm, welches die Klassen der Anwendung und deren Beziehungen untereinander darstellt kann im \Anhang{app:Klassendiagramm} eingesehen werden.
+Die Main-Komponente ist für die Verwaltung von Fenstern, Stores und Utilities verantwortlich und nutzt die Integration von Helper-Funktionen.
+Die Authentifizierung erfolgt über \ac{MSAL}, während eine \ac{MS} Graph-Schnittstelle über Axios implementiert wird, um auf die Kalendereinträge von dem Benutzer zuzugreifen.
 
-\Abbildung{Modulimport} zeigt den grundsätzlichen Programmablauf beim Einlesen eines Moduls als \ac{EPK}.
-\begin{figure}[htb]
-\centering
-\includegraphicsKeepAspectRatio{modulimport.pdf}{0.9}
-\caption{Prozess des Einlesens eines Moduls}
-\label{fig:Modulimport}
-\end{figure}
+\paragraph{Diagramm}
+Eine vereinfachte Darstellung der Logik ist im \Anhang{app:Projektstruktur} zu finden.
+
+%\Abbildung{Modulimport} zeigt den grundsätzlichen Programmablauf beim Einlesen eines Moduls als \ac{EPK}.
+%\begin{figure}[htb]
+%\centering
+%\includegraphicsKeepAspectRatio{modulimport.pdf}{0.9}
+%\caption{Prozess des Einlesens eines Moduls}
+%\label{fig:Modulimport}
+%\end{figure}
 
 
 \subsection{Maßnahmen zur Qualitätssicherung}
 \label{sec:Qualitaetssicherung}
-\begin{itemize}
-	\item Welche Maßnahmen werden ergriffen, um die Qualität des Projektergebnisses (siehe Kapitel~\ref{sec:Qualitaetsanforderungen}: \nameref{sec:Qualitaetsanforderungen}) zu sichern (\zB automatische Tests, Anwendertests)?
-	\item \Ggfs Definition von Testfällen und deren Durchführung (durch Programme/Benutzer).
-\end{itemize}
+%\begin{itemize}
+%	\item Welche Maßnahmen werden ergriffen, um die Qualität des Projektergebnisses (siehe Kapitel~\ref{sec:Qualitaetsanforderungen}: \nameref{sec:Qualitaetsanforderungen}) zu sichern (\zB automatische Tests, Anwendertests)?
+%	\item \Ggfs Definition von Testfällen und deren Durchführung (durch Programme/Benutzer).
+%\end{itemize}
+Um die Qualität des Projektergebnisses sicherzustellen, werden ausschließlich Anwendertests durchgeführt.
+Diese Tests werden von dem Entwickler und tatsächlichen Benutzern der Anwendung durchgeführt, um sicherzustellen, dass sie den Anforderungen und Erwartungen des Stakeholders entsprechen.
+
+Die Anwendertests umfassen eine Reihe von Szenarien und Aufgaben, die die Benutzer durchführen sollen.
+Diese können \bspw das Live-Video Signal durch die Key-Events wechseln oder einen 0 Uhr Kalendereintrag setzen, um die Konfiguration zu testen.
+
+Es liegt der Fokus darauf, die Anwendung in einer realen Umgebung zu testen und Feedback von den Benutzern einzuholen.
+Dies ermöglicht es, potenzielle Probleme oder Verbesserungsmöglichkeiten frühzeitig zu identifizieren und direkt in die Entwicklung einzubeziehen.
+
+Die Anwendertests werden kontinuierlich während des Entwicklungsprozesses durchgeführt, somit wird die Anforderungen und die Qualität des Projektergebnisses gewährleistet.
 
 
-\subsection{Pflichtenheft/Datenverarbeitungskonzept}
-\label{sec:Pflichtenheft}
-\begin{itemize}
-	\item Auszüge aus dem Pflichtenheft/Datenverarbeitungskonzept, wenn es im Rahmen des Projekts erstellt wurde.
-\end{itemize}
-
-\paragraph{Beispiel}
-Ein Beispiel für das auf dem Lastenheft (siehe Kapitel~\ref{sec:Lastenheft}: \nameref{sec:Lastenheft}) aufbauende Pflichtenheft ist im \Anhang{app:Pflichtenheft} zu finden.
+%\subsection{Pflichtenheft/Datenverarbeitungskonzept}
+%\label{sec:Pflichtenheft}
+%\begin{itemize}
+%	\item Auszüge aus dem Pflichtenheft/Datenverarbeitungskonzept, wenn es im Rahmen des Projekts erstellt wurde.
+%\end{itemize}
+%
+%\paragraph{Beispiel}
+%Ein Beispiel für das auf dem Lastenheft (siehe Kapitel~\ref{sec:Lastenheft}: \nameref{sec:Lastenheft}) aufbauende Pflichtenheft ist im \Anhang{app:Pflichtenheft} zu finden.

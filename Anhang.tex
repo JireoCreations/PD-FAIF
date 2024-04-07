@@ -8,48 +8,54 @@
 \input{Anhang/AnhangLastenheft.tex}
 \clearpage
 
+\input{Anhang/AnhangRessourcen.tex}
+
 \subsection{Use Case-Diagramm}
 \label{app:UseCase}
-Use Case-Diagramme und weitere \acs{UML}-Diagramme kann man auch direkt mit \LaTeX{} zeichnen, siehe \zB \url{http://metauml.sourceforge.net/old/usecase-diagram.html}.
 \begin{figure}[htb]
 \centering
-\includegraphicsKeepAspectRatio{UseCase.pdf}{0.7}
+\includegraphicsKeepAspectRatio{use_case.png}{0.7}
 \caption{Use Case-Diagramm}
 \end{figure}
 
-\input{Anhang/AnhangPflichtenheft.tex}
-
-\subsection{Datenbankmodell}
-\label{app:Datenbankmodell}
-ER-Modelle kann man auch direkt mit \LaTeX{} zeichnen, siehe \zB \url{http://www.texample.net/tikz/examples/entity-relationship-diagram/}.
-\begin{figure}[htb]
-\centering
-\includegraphicsKeepAspectRatio{database.pdf}{1}
-\caption{Datenbankmodell}
-\end{figure}
+%\input{Anhang/AnhangPflichtenheft.tex}
+%
+%\subsection{Datenbankmodell}
+%\label{app:Datenbankmodell}
+%ER-Modelle kann man auch direkt mit \LaTeX{} zeichnen, siehe \zB \url{http://www.texample.net/tikz/examples/entity-relationship-diagram/}.
+%\begin{figure}[htb]
+%\centering
+%\includegraphicsKeepAspectRatio{database.pdf}{1}
+%\caption{Datenbankmodell}
+%\end{figure}
 \clearpage
 
 \input{Anhang/AnhangEntwuerfe.tex}
 \clearpage
 \input{Anhang/AnhangScreenshots.tex}
-\input{Anhang/AnhangDoc.tex}
-\clearpage
-\input{Anhang/AnhangTest.tex}
+%\input{Anhang/AnhangDoc.tex}
+%\clearpage
+%\input{Anhang/AnhangTest.tex}
 
-\subsection{Klasse: ComparedNaturalModuleInformation}
-\label{app:CNMI}
-Kommentare und simple Getter/Setter werden nicht angezeigt.
-\lstinputlisting[language=php, caption={Klasse: ComparedNaturalModuleInformation}]{Listings/cnmi.php}
+\subsection{Main-Komponente Logik-Loop}
+\label{app:MAINLOOP}
+Main Logic-Loop für das Pulling der Kalendereinträge
+\lstinputlisting[language=typescript, caption={Main-Komponente Logik-Loop}]{Listings/main.ts}
 \clearpage
 
-\subsection{Klassendiagramm}
-\label{app:Klassendiagramm}
-Klassendiagramme und weitere \acs{UML}-Diagramme kann man auch direkt mit \LaTeX{} zeichnen, siehe \zB \url{http://metauml.sourceforge.net/old/class-diagram.html}.
+\subsection{Main-Komponente IPC}
+\label{app:MAINIPC}
+Main \ac{IPC} für Kommunikation zwischen Renderer und Main
+\lstinputlisting[language=typescript, caption={Main-Komponente IPC}]{Listings/ipcMain.ts}
+\clearpage
+
+\subsection{Projektstruktur}
+\label{app:Projektstruktur}
 \begin{figure}[htb]
 \centering
-\includegraphicsKeepAspectRatio{Klassendiagramm.pdf}{1}
-\caption{Klassendiagramm}
+\includegraphicsKeepAspectRatio{Projektstruktur.drawio.png}{1}
+\caption{Projektstruktur}
 \end{figure}
 \clearpage
 
-\input{Anhang/AnhangBenutzerDoku.tex}
+%\input{Anhang/AnhangBenutzerDoku.tex}

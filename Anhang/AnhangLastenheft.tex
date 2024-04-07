@@ -4,29 +4,35 @@ Es folgt ein Auszug aus dem Lastenheft mit Fokus auf die Anforderungen:
 
 Die Anwendung muss folgende Anforderungen erfüllen: 
 \begin{enumerate}[itemsep=0em,partopsep=0em,parsep=0em,topsep=0em]
-\item Verarbeitung der Moduldaten
+\item Authentifizierung
 	\begin{enumerate}
-	\item Die Anwendung muss die von Subversion und einem externen Programm bereitgestellten Informationen (z.B. Source-Benutzer, -Datum, Hash) verarbeiten.
-	\item Auslesen der Beschreibung und der Stichwörter aus dem Sourcecode.
+	\item Die Anwendung muss in der Lage sein, mit Azure Active Directory (Azure AD) zu integrieren, um die Authentifizierung von Benutzern zu ermöglichen.
+	\item Die Anwendung soll den Azure AD Code Authentication Flow verwenden, um die Authentifizierung von Benutzern zu ermöglichen. Dies beinhaltet den Austausch von Autorisierungscodes gegen Zugriffstoken und Refresh-Token.
+	\item Die Anwendung braucht die nötigen Berechtigungen, um auf den vom Benutzer eingeloggten Kalender über Azure AD und dem zugehörigen Tenant zuzugreifen.
 	\end{enumerate}
 \item Darstellung der Daten
 	\begin{enumerate}
-	\item Die Anwendung muss eine Liste aller Module erzeugen inkl. Source-Benutzer und -Datum, letztem Commit-Benutzer und -Datum für alle drei Umgebungen. 
-	\item Verknüpfen der Module mit externen Tools wie z.B. Wiki-Einträgen zu den Modulen oder dem Sourcecode in Subversion.
-	\item Die Sourcen der Umgebungen müssen verglichen und eine schnelle Übersicht zur Einhaltung des allgemeinen Entwicklungsprozesses gegeben werden. 
-	\item Dieser Vergleich muss auf die von einem bestimmten Benutzer bearbeiteten Module eingeschränkt werden können. 
-	\item Die Anwendung muss in dieser Liste auch Module anzeigen, die nach einer Bearbeitung durch den gesuchten Benutzer durch jemand anderen bearbeitet wurden. 
-	\item Abweichungen sollen kenntlich gemacht werden. 
-	\item Anzeigen einer Übersichtsseite für ein Modul mit allen relevanten Informationen zu diesem.
+	\item Die Anwendung muss eine Liste aller noch folgenden Termine für den aktuellen Tag anzeigen.
+	\item Vergangene Termine müssen 30 Minuten nach beendigung weiterhin angezeigt werden.
+	\item Jeder Besucher soll über die Oberfläche mit folgenden Informationen begrüßt werden.:
+	\begin{enumerate}
+		\item Dem vollständigen Namen.
+		\item Der angehörigkeit des Besuchers.
+		\item Der Kontaktperson oder Organisator des Termins.
+		\item \Ggfs Zusätzlicher oder relevanter Informationen zum Termin.
+	\end{enumerate}
+	\item Die Anwendung muss eine Laufschrift am unteren Bildschirmrand für allgemeine Informationen bereitstellen.
+	\item Die Anwendung muss einen für die wartenden Besucher bereitgestellten Live-Stream von \zB den öffentlichen Fernsehprogrammen darstellen.
+	\item Die aktuelle Uhrzeit und das zu verzeichnende Datum muss angezeigt werden.
 	\end{enumerate}
 \item Sonstige Anforderungen
 	\begin{enumerate}
-	\item Die Anwendung muss ohne das Installieren einer zusätzlichen Software über einen Webbrowser im Intranet erreichbar sein.
-	\item Die Daten der Anwendung müssen jede Nacht \bzw nach jedem \acs{SVN}-Commit automatisch aktualisiert werden. 
-	\item Es muss ermittelt werden, ob Änderungen auf der Produktionsumgebung vorgenommen wurden, die nicht von einer anderen Umgebung kopiert wurden. Diese Modulliste soll als Mahnung per E-Mail an alle Entwickler geschickt werden (Peer Pressure).
-	\item Die Anwendung soll jederzeit erreichbar sein.
-	\item Da sich die Entwickler auf die Anwendung verlassen, muss diese korrekte Daten liefern und darf keinen Interpretationsspielraum lassen.
-	\item Die Anwendung muss so flexibel sein, dass sie bei Änderungen im Entwicklungsprozess einfach angepasst werden kann.
+	\item Die Anwendung soll als gebaute Executable ausführbar sein.
+	\item Die Anwendung soll über den aktuellsten 0 Uhr Kalender-Eintrag konfiguriert werden können. Dazu zählen folgende Konfigurationsmöglichkeiten.:
+	\begin{enumerate}
+		\item Das setzen des Hintergrundbildes der Anwendung.
+		\item Das setzen des Texts für die Laufschrift.
+	\end{enumerate}
 	\end{enumerate}
 \end{enumerate}
 

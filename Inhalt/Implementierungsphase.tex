@@ -2,36 +2,59 @@
 \section{Implementierungsphase} 
 \label{sec:Implementierungsphase}
 
-\subsection{Implementierung der Datenstrukturen}
-\label{sec:ImplementierungDatenstrukturen}
-
-\begin{itemize}
-	\item Beschreibung der angelegten Datenbank (\zB Generierung von \acs{SQL} aus Modellierungswerkzeug oder händisches Anlegen), \acs{XML}-Schemas \usw.
-\end{itemize}
+%\subsection{Implementierung der Datenstrukturen}
+%\label{sec:ImplementierungDatenstrukturen}
+%
+%\begin{itemize}
+%	\item Beschreibung der angelegten Datenbank (\zB Generierung von \acs{SQL} aus Modellierungswerkzeug oder händisches Anlegen), \acs{XML}-Schemas \usw.
+%\end{itemize}
 
 
 \subsection{Implementierung der Benutzeroberfläche}
 \label{sec:ImplementierungBenutzeroberflaeche}
 
-\begin{itemize}
-	\item Beschreibung der Implementierung der Benutzeroberfläche, falls dies separat zur Implementierung der Geschäftslogik erfolgt (\zB bei \acs{HTML}-Oberflächen und Stylesheets).
-	\item \Ggfs Beschreibung des Corporate Designs und dessen Umsetzung in der Anwendung.
-	\item Screenshots der Anwendung
-\end{itemize}
+%\begin{itemize}
+%	\item Beschreibung der Implementierung der Benutzeroberfläche, falls dies separat zur Implementierung der Geschäftslogik erfolgt (\zB bei \acs{HTML}-Oberflächen und Stylesheets).
+%	\item \Ggfs Beschreibung des Corporate Designs und dessen Umsetzung in der Anwendung.
+%	\item Screenshots der Anwendung
+%\end{itemize}
+Die Implementierung der Benutzeroberfläche erfolgt separat von der Implementierung der Geschäftslogik.
+In diesem Fall wird das React-Framework verwendet, um die verschiedenen \ac{UI}-Komponenten zu entwickeln und zu gestalten.
 
-\paragraph{Beispiel}
-Screenshots der Anwendung in der Entwicklungsphase mit Dummy-Daten befinden sich im \Anhang{Screenshots}.
+Die Benutzeroberfläche wird mithilfe von \ac{TSX} erstellt, einer Kombination aus \ac{TS} und \ac{JSX}, welches einer Syntaxerweiterung von \ac{JS} ist, die es ermöglicht, \ac{HTML}-ähnliche Elemente direkt in \ac{JS}-Code einzubetten.
+Dadurch können die verschiedenen \ac{UI}-Komponenten in einer klaren und strukturierten Weise erstellt werden, wobei die Prozesse zur formatierung und das Markup eng miteinander verbunden sind.
+
+Für das Styling wird Tailwind \ac{CSS}, ein Utility-First \ac{CSS}-Framework, das eine Reihe von vorgefertigten Utility-Klassen bereitstellt, genutzt.
+Dadurch wird die Entwicklung von \ac{CSS} stark vereinfacht und beschleunigt, da keine separaten Stylesheets erstellt werden müssen.
+
+\paragraph{Produkt in Aktion}
+Bilder vom Produkt im Eingangsbereich mit Dummy-Daten befinden sich im \Anhang{Produktfotos}.
 
 
 \subsection{Implementierung der Geschäftslogik}
 \label{sec:ImplementierungGeschaeftslogik}
+%\begin{itemize}
+%	\item Beschreibung des Vorgehens bei der Umsetzung/Programmierung der entworfenen Anwendung.
+%	\item \Ggfs interessante Funktionen/Algorithmen im Detail vorstellen, verwendete Entwurfsmuster zeigen.
+%	\item Quelltextbeispiele zeigen.
+%	\item Hinweis: Wie in Kapitel~\ref{sec:Einleitung}: \nameref{sec:Einleitung} zitiert, wird nicht ein lauffähiges Programm bewertet, sondern die Projektdurchführung. Dennoch würde ich immer Quelltextausschnitte zeigen, da sonst Zweifel an der tatsächlichen Leistung des Prüflings aufkommen können.
+%\end{itemize}
+Die Geschäftslogik umfasst mehrere Schlüsselfunktionen wie das Bereitstellen von Kalenderdaten wofür die Kommunikation mit \ac{MS} Azure \ac{AD} benötigt wird.
+Zusätzlich wird die Verarbeitung von Benutzerinteraktionen und die Verwaltung von Zuständen bestandteil der Geschäftslogik.
 
-\begin{itemize}
-	\item Beschreibung des Vorgehens bei der Umsetzung/Programmierung der entworfenen Anwendung.
-	\item \Ggfs interessante Funktionen/Algorithmen im Detail vorstellen, verwendete Entwurfsmuster zeigen.
-	\item Quelltextbeispiele zeigen.
-	\item Hinweis: Wie in Kapitel~\ref{sec:Einleitung}: \nameref{sec:Einleitung} zitiert, wird nicht ein lauffähiges Programm bewertet, sondern die Projektdurchführung. Dennoch würde ich immer Quelltextausschnitte zeigen, da sonst Zweifel an der tatsächlichen Leistung des Prüflings aufkommen können.
-\end{itemize}
 
-\paragraph{Beispiel}
-Die Klasse \texttt{Com\-par\-ed\-Na\-tu\-ral\-Mo\-dule\-In\-for\-ma\-tion} findet sich im \Anhang{app:CNMI}.  
+Für die Bereitstellung von Kalenderdaten ist es wichtig, Daten aus \ac{MS} Azure \ac{AD} abzurufen, sie zu parsen und entsprechend vorzubereiten, um kommende Termine und Veranstaltungen im Renderer anzuzeigen.
+Diese Daten müssen dynamisch in die Benutzeroberfläche integriert werden, um den Benutzern einen aktuellen Überblick zu bieten, dies wird erreicht, indem eine \ac{IPC} basierend auf dem Observer-Pattern erstellt wird.
+
+
+Die Verwaltung von Benutzerinteraktionen ist ein weiterer zentraler Aspekt der Geschäftslogik.
+Da die Anwendung von einer aktiven Authentifikation abhängig ist, müssen Funktionalitäten definiert und entsprechende Aktionen zugewiesen werden, die den Authorization Code Flow von \ac{MS} Azure \ac{AD} nutzen.
+Dies erfordert das Implementieren von \ac{MSAL} und einer korrekten handhabung von Access-Token.
+
+
+Die Verwaltung von Zuständen ist ein entscheidender Aspekt, um sicherzustellen, dass die Benutzeroberfläche der Anwendung korrekt aktualisiert wird und auf Änderungen reagiert.
+Dies umfasst, das Definieren und Aktualisieren von Konfigurationen und der zu nutzenden Session, sowie das Aktualisieren vom aktuellen Zustand im Renderer.
+
+
+\paragraph{Teile der Implementierung}
+Der Logik-Loop für das Pulling der Kalendereinträge in der \texttt{Main\-Kom\-po\-nen\-te} findet sich im \Anhang{app:MAINLOOP}.
