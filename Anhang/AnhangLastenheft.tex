@@ -6,24 +6,24 @@ Die Anwendung muss folgende Anforderungen erfüllen:
 \begin{enumerate}[itemsep=0em,partopsep=0em,parsep=0em,topsep=0em]
 \item Authentifizierung
 	\begin{enumerate}
-	\item Die Anwendung muss in der Lage sein, mit Azure Active Directory (Azure AD) zu integrieren, um die Authentifizierung von Benutzern zu ermöglichen.
-	\item Die Anwendung soll den Azure AD Code Authentication Flow verwenden, um die Authentifizierung von Benutzern zu ermöglichen. Dies beinhaltet den Austausch von Autorisierungscodes gegen Zugriffstoken und Refresh-Token.
-	\item Die Anwendung braucht die nötigen Berechtigungen, um auf den vom Benutzer eingeloggten Kalender über Azure AD und dem zugehörigen Tenant zuzugreifen.
+	\item Die Anwendung muss in der Lage sein, mit \ac{MS} Azure \ac{AD} zu interagieren, um die Authentifizierung von Benutzern zu ermöglichen.
+	\item Die Anwendung soll den \ac{MS} Azure \ac{AD} Authentication Code Flow verwenden, um die Authentifizierung von Benutzern zu ermöglichen. Dies beinhaltet den Austausch von Autorisierungscodes gegen Access-Token und Refresh-Token.
+	\item Die Anwendung braucht die nötigen Berechtigungen, um auf den vom Benutzer eingeloggten Kalender über \ac{MS} Azure \ac{AD} und dem zugehörigen Tenant zuzugreifen.
 	\end{enumerate}
 \item Darstellung der Daten
 	\begin{enumerate}
 	\item Die Anwendung muss eine Liste aller noch folgenden Termine für den aktuellen Tag anzeigen.
-	\item Vergangene Termine müssen 30 Minuten nach beendigung weiterhin angezeigt werden.
+	\item Vergangene Termine müssen 30 Minuten nach Beendigung weiterhin angezeigt werden.
 	\item Jeder Besucher soll über die Oberfläche mit folgenden Informationen begrüßt werden.:
 	\begin{enumerate}
 		\item Dem vollständigen Namen.
-		\item Der angehörigkeit des Besuchers.
+		\item Der Firmenzugehörigkeit des Besuchers.
 		\item Der Kontaktperson oder Organisator des Termins.
-		\item \Ggfs Zusätzlicher oder relevanter Informationen zum Termin.
+		\item \Ggfs zusätzlicher oder relevanter Informationen zum Termin.
 	\end{enumerate}
 	\item Die Anwendung muss eine Laufschrift am unteren Bildschirmrand für allgemeine Informationen bereitstellen.
 	\item Die Anwendung muss einen für die wartenden Besucher bereitgestellten Live-Stream von \zB den öffentlichen Fernsehprogrammen darstellen.
-	\item Die aktuelle Uhrzeit und das zu verzeichnende Datum muss angezeigt werden.
+	\item Die aktuelle Uhrzeit und Datum muss angezeigt werden.
 	\end{enumerate}
 \item Sonstige Anforderungen
 	\begin{enumerate}

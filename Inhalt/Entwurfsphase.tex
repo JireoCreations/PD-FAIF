@@ -61,6 +61,7 @@ Dies ermöglicht es den Besuchern, relevante Informationen schnell zu erfassen, 
 
 Die Terminauflistung wird angezeigt, wenn Termine vorhanden sind, und zeigt eine Liste der kommenden Ereignisse oder Besprechungen über die gesamte rechte Seite an.
 Wenn keine Termine vorhanden sind, wird die Terminauflistung ausgeblendet, um Platz für die anderen Komponenten zu schaffen.
+Termine innerhalb der Auflistung werden genutzt um letzlich den Besucher zu begrüßen.
 
 Es gibt kein traditionelles Menü oder \ac{UI} in der Anwendung.
 Die Anwendung wird ausschließlich von Hotkeys gesteuert, die von den Benutzern verwendet werden können, um zwischen den verschiedenen Ansichten zu navigieren oder Aktionen auszuführen.
@@ -94,6 +95,9 @@ Entwürfe für die Oberfläche finden sich im \Anhang{app:Entwuerfe}.
 %	\item Modellierung und Beschreibung der wichtigsten (!) Bereiche der Geschäftslogik (\zB mit Kom\-po\-nen\-ten-, Klassen-, Sequenz-, Datenflussdiagramm, Programmablaufplan, Struktogramm, \ac{EPK}).
 %	\item Wie wird die erstellte Anwendung in den Arbeitsfluss des Unternehmens integriert?
 %\end{itemize}
+
+Eine konkrete Geschäftslogik ist nicht Teil des Projekts und wird von \ac{MS} Azure \ac{AD} genutzt.
+Es wird lediglich das benötigte Anfordern und die dazugehörige Darstellung von Kontakt und Termindaten implementiert.
 
 Dieses Projekts ist klar strukturiert und ist unterteilt zwischen einer Renderer- und Main-Komponente.
 Hier wird das Electron-Framework verwendet, um sowohl eine Chromium Instanz als auch die Kommunikation zwischen den beiden Komponente mittels des Observer-Patterns bereitzustellen.
